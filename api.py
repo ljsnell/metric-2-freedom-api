@@ -5,7 +5,7 @@ app = Flask(__name__)
 CORS(app)
 
 freedom_unit_types_dict = {'g':{'divider':7, 'f_unit_name': ' glocks'}}
-metric_to_inches_dict = {'m':{'divider': 39.37}, 'cm':{'divider': 0.39}}
+metric_to_inches_dict = {'km': {'divider': 39370}, 'm':{'divider': 39.37}, 'cm':{'divider': 0.39}}
 
 def metric_to_inches(number, metric_unit):
     return number * metric_to_inches_dict.get(metric_unit)['divider']
