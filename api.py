@@ -24,8 +24,7 @@ def filtered():
     inches = metric_to_inches(number, metric_unit)
     print(inches)
     response = inches_to_freedom(inches, freedom_unit_type)
-    # response = unit(unit_to_convert_to) /unit(unit_type)
-    # return response
+    
     return str(response)
 
 if __name__ == '__main__':
