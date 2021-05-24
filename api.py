@@ -1,8 +1,10 @@
-from flask import Flask, request, Response
+from flask import Flask, request, jsonify, Response
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
-freedom_unit_types_dict = {'g':{'divider':7}}
+freedom_unit_types_dict = {'g':{'divider':7, 'f_unit_name': ' glocks'}}
 metric_to_inches_dict = {'m':{'divider': 39.37}, 'cm':{'divider': 0.39}}
 
 def metric_to_inches(number, metric_unit):
@@ -21,9 +23,10 @@ def filtered():
 
     inches = metric_to_inches(number, metric_unit)
     print(inches)
-    response = inches_to_freedom(inches, freedom_unit_type)
-
-    return str(response)
+    response = {'freedom_units': str(inches_to_freedom(inches, freedom_unit_type)) + freedom_unit_types_dict.get(freedom_unit_type)['f_unit_name']}
+    response = jsonify(response)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 if __name__ == '__main__':
     app.run()
