@@ -4,7 +4,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-freedom_unit_types_dict = {'g':{'divider':7, 'f_unit_name': ' glocks'}, 
+freedom_unit_types_dict = {
+    'bmac': {'divider': 3.75, 'f_unit_name': ' Big Macs'},
+    'g':{'divider':7, 'f_unit_name': ' Glocks'}, 
     'ar15': {'divider': 39, 'f_unit_name': ' AR-15 Rifles'},
     'pdrone': {'divider': 324, 'f_unit_name': ' Predator Drones'}}
 metric_to_inches_dict = {'km': {'divider': 39370}, 
