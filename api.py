@@ -4,8 +4,12 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-freedom_unit_types_dict = {'g':{'divider':7, 'f_unit_name': ' glocks'}, 'ar15': {'divider': 39, 'f_unit_name': " AR-15 Rifles"}}
-metric_to_inches_dict = {'km': {'divider': 39370}, 'm':{'divider': 39.37}, 'cm':{'divider': 0.39}}
+freedom_unit_types_dict = {'g':{'divider':7, 'f_unit_name': ' glocks'}, 
+    'ar15': {'divider': 39, 'f_unit_name': ' AR-15 Rifles'},
+    'pdrone': {'divider': 324, 'f_unit_name': ' Predator Drones'}}
+metric_to_inches_dict = {'km': {'divider': 39370}, 
+    'm':{'divider': 39.37}, 
+    'cm':{'divider': 0.39}}
 
 def metric_to_inches(number, metric_unit):
     return number * metric_to_inches_dict.get(metric_unit)['divider']
