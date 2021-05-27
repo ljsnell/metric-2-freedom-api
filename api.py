@@ -9,7 +9,8 @@ freedom_unit_types_dict = {
     'g':{'divider':7, 'f_unit_name': ' Glocks'}, 
     'ar15': {'divider': 39, 'f_unit_name': ' AR-15 Rifles'},
     'pdrone': {'divider': 324, 'f_unit_name': ' Predator Drones'}}
-metric_to_inches_dict = {'km': {'divider': 39370}, 
+metric_to_inches_dict = {
+    'km': {'divider': 39370}, 
     'm':{'divider': 39.37}, 
     'cm':{'divider': 0.39}}
 
